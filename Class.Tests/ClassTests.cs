@@ -315,7 +315,8 @@ namespace Class.Tests
             }
         }
         
-       
+        //TODO: Uncomment this if you want to check your task for advanced level
+        /*
         
         [TestCase(5, 5, 25)]
         [TestCase(2, 2, 4)]
@@ -670,6 +671,6 @@ namespace Class.Tests
                 Assert.Fail("Method 'NumberSquare' in ArrayRectangles works incorrectly.");
         }
         
-        
+        */
     }
 }
