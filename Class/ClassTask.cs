@@ -70,7 +70,7 @@ namespace Class
         public ArrayRectangles(int n)
         {
             Rectangle rectangle = new Rectangle();
-            for (int count = 0; count < n; count++)
+            for (int count = 0; count <= n; count++)
             {
                 rectangle_array[count] = rectangle;
             }
@@ -94,32 +94,26 @@ namespace Class
 
         public int NumberMaxArea(Rectangle[] rectangle_array)
         {
-            int countOfMaxArea = 0;
+            int numberOfMaxArea = 0;
             double MaxArea = rectangle_array[0].Area();
             for (int i = 1; i < rectangle_array.Length; i++)
             {
                 if (rectangle_array[i].Area() > MaxArea) MaxArea = rectangle_array[i].Area();
+                numberOfMaxArea = i;
             }
-            for (int j = 1; j < rectangle_array.Length; j++)
-            {
-                if (rectangle_array[j].Area() == MaxArea) countOfMaxArea++;
-            }
-            return countOfMaxArea;
+            return numberOfMaxArea;
         }
 
         public int NumberMinPerimeter(Rectangle[] rectangle_array)
         {
-            int countOfMinPerimeter = 0;
+            int numberOfMinPerimeter = 0;
             double MinPerimeter = rectangle_array[0].Perimeter();
             for (int i = 1; i < rectangle_array.Length; i++)
             {
                 if (rectangle_array[i].Perimeter() > MinPerimeter) MinPerimeter = rectangle_array[i].Perimeter();
+                numberOfMinPerimeter = i;
             }
-            for (int j = 1; j < rectangle_array.Length; j++)
-            {
-                if (rectangle_array[j].Perimeter() == MinPerimeter) countOfMinPerimeter++;
-            }
-            return countOfMinPerimeter;
+            return numberOfMinPerimeter;
         }
 
         public int NumberSquare (Rectangle[] rectangle_array)
