@@ -316,7 +316,7 @@ namespace Class.Tests
         }
         
        
-        
+        /* 
         [TestCase(5, 5, 25)]
         [TestCase(2, 2, 4)]
         [TestCase(0.5, 0.5, 0.25)]
@@ -672,4 +672,5 @@ namespace Class.Tests
         
         
     }
+    */
 }
