@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Class
@@ -9,25 +7,15 @@ namespace Class
         private double sideA;
         private double sideB;
 
-        public double GetSideA(double sideA)
-        {
-             return sideA;           
-        }
-
-        public double GetSideB (double sideB)
-        {
-             return sideB;
-        }
-
         public Rectangle (double sideA, double sideB)
         {
-            this.sideA = sideA;
-            this.sideB = sideB;
+            double a = sideA;
+            double b = sideB;
         }
 
         public Rectangle (double sideA)
         {
-            this.sideA = sideA;
+            double a = sideA;
             this.sideB = 5;
         }
 
@@ -35,6 +23,15 @@ namespace Class
         {
             sideA = 4;
             sideB = 3;
+        }
+        public double GetSideA()
+        {
+            return sideA;
+        }
+
+        public double GetSideB()
+        {
+            return sideB;
         }
 
         public double Area()
