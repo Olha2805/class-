@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Class
@@ -36,12 +38,12 @@ namespace Class
 
         public double Area()
         {
-            return (sideA * sideB);
+            return sideA * sideB;
         } 
 
         public double Perimeter()
         {
-            return (sideA * 2 + sideB * 2);
+            return sideA * 2 + sideB * 2;
         }
 
         public bool IsSquare()
@@ -56,30 +58,30 @@ namespace Class
             sideB = sideA - sideB;
             sideA = sideA - sideB;
         }
-
     }
 
     public class ArrayRectangles
     {
 
-        private Rectangle[] rectangle_array;
+        private Rectangle[] rectangle_array;    
 
         public ArrayRectangles(int n)
-        {
-            Rectangle rectangle = new Rectangle();
-            for (int count = 0; count < n; count++)
-            {
-                rectangle_array[count] = rectangle;
-            }
+        {            
+            rectangle_array = new Rectangle[n];
         }
 
+        public ArrayRectangles(params Rectangle[] rectangle_array1)
+        {
+            rectangle_array = new Rectangle[rectangle_array1.Length];
+            Array.Copy(rectangle_array1, rectangle_array, rectangle_array1.Length);
+        }
         public bool AddRectangle(Rectangle[] rectangle_array, int n)
         {
 
             if (rectangle_array.Length < n)
             {
                 Rectangle rectangle = new Rectangle();
-                for (int i = 0; i < rectangle_array.Length - 1; i++)
+                for (int i = 0; i < rectangle_array.Length; i++)
                 {
                     rectangle_array[i] = rectangle_array[i + 1];
                     rectangle_array[0] = rectangle;
@@ -113,15 +115,15 @@ namespace Class
             return numberOfMinPerimeter;
         }
 
-        public int NumberSquare (Rectangle[] rectangle_array)
+        public int NumberSquare(Rectangle[] rectangle_array)
         {
             int countOfSquare = 0;
             for (int i = 0; i < rectangle_array.Length; i++)
             {
                 if (rectangle_array[0].IsSquare()) countOfSquare++;
-            }           
+            }
             return countOfSquare;
         }
     }
-        
+
 }
