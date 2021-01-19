@@ -70,7 +70,7 @@ namespace Class
         public ArrayRectangles(int n)
         {
             Rectangle rectangle = new Rectangle();
-            for (int count = 0; count <= n; count++)
+            for (int count = 0; count < n; count++)
             {
                 rectangle_array[count] = rectangle;
             }
