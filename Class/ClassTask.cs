@@ -36,23 +36,23 @@ namespace Class
             return sideB;
         }
 
-        public double Area()
+        public double Area(double sideA, double sideB)
         {
             return sideA * sideB;
         } 
 
-        public double Perimeter()
+        public double Perimeter(double sideA, double sideB)
         {
             return sideA * 2 + sideB * 2;
         }
 
-        public bool IsSquare()
+        public bool IsSquare(double sideA, double sideB)
         {
             if (sideA == sideB) return true;
             else return false;
         }
 
-        public void ReplaceSides()
+        public void ReplaceSides(double sideA, double sideB)
         {
             sideA = sideA + sideB;
             sideB = sideA - sideB;
@@ -120,7 +120,7 @@ namespace Class
             int countOfSquare = 0;
             for (int i = 0; i < rectangle_array.Length; i++)
             {
-                if (rectangle_array[0].IsSquare()) countOfSquare++;
+                if (rectangle_array[i].IsSquare()) countOfSquare++;
             }
             return countOfSquare;
         }
