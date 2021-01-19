@@ -4,20 +4,73 @@ using System.Linq;
 
 namespace Class
 {
-    //TODO: Create public class Rectangle here
+    public class Rectangle
+    {
+        private double sideA;
+        private double sideB;
 
-    //TODO: Define two private double fields: 'sideA', 'sideB'
+        public void SetSideA(double sideA)
+        {
+            this.sideA = sideA;
+        } 
 
-    //TODO: Define constructor with two double parameters: 'a', 'b'. Assign parameters to sides
-    //TODO: Define constructor with double parameter: 'a'. Parameter sets side A of rectangle, and B-side always equals 5
-    //TODO: Define constructor without parameters. A-side of rectangle equals 4, B-side - 3
+        public double GetSideA(double sideA)
+        {
+             return sideA;           
+        }
 
-    //TODO: Define public method 'GetSideA' that returns value of A-side
-    //TODO: Define public method 'GetSideB' that returns value of B-side
-    //TODO: Define public method 'Area' that calculates and returns value of area
-    //TODO: Define public method 'Perimeter' that calculates and returns value of perimeter
-    //TODO: Define public method 'IsSquare' that checks if rectangle is a square. Returns true if it is a square, false if it's not.
-    //TODO: Define public method 'ReplaceSides' that swaps values of rectangle sides
+        public void SetSideB (double sideB)
+        {
+            this.sideA = sideB;
+        }
+
+        public double GetSideB (double sideB)
+        {
+             return sideB;
+        }
+
+        public Rectangle (double sideA, double sideB)
+        {
+            this.sideA = sideA;
+            this.sideB = sideB;
+        }
+
+        public Rectangle (double sideA)
+        {
+            this.sideA = sideA;
+            this.sideB = 5;
+        }
+
+        public Rectangle()
+        {
+            this.sideA = 4;
+            this.sideB = 3;
+        }
+
+        public void Perimeter (double sideA, double sideB)
+        {
+            double perimeter = sideA * 2 + sideB * 2;
+        }
+
+        public void Area (double sideA, double sideB)
+        {
+            double area = sideA * sideB;
+        }
+
+        public bool IsSquare(double sideA, double sideB)
+        {
+            if (sideA == sideB) return true;
+            else return false;
+        }
+
+        public void ReplaceSides(double sideA, double sideB)
+        {
+            sideA = sideA + sideB;
+            sideB = sideA - sideB;
+            sideA = sideA - sideB;
+        }
+
+    }
 
 
 
@@ -27,7 +80,7 @@ namespace Class
 
     //TODO: Define constructor with int parameter: 'n'. Constructor should create an empty array of rectangles with length of 'n'
     //TODO: Define constructor that gets enumerable or array of rectangles. Constructor should assign them to its field
-    
+
     //TODO: Define public method 'AddRectangle' that adds rectangle on the first empty place of array field. Returns true if array has empty space, if not
     //TODO: Define public method 'NumberMaxArea' that returns number of rectangle with max value of area. Numbering starts from 0
     //TODO: Define public method 'NumberMinPerimeter' that returns number of rectangle with min value of perimeter. Numbering starts from 0
