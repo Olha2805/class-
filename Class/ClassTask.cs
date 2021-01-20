@@ -75,17 +75,12 @@ namespace Class
             rectangle_array = new Rectangle[rectangle_array1.Length];
             Array.Copy(rectangle_array1, rectangle_array, rectangle_array1.Length);
         }
-        public bool AddRectangle(Rectangle[] rectangle_array, int n)
+        public bool AddRectangle(Rectangle[] rectangle_array)
         {
 
-            if (rectangle_array.Length < n)
+            if (rectangle_array.Length != null)
             {
-                Rectangle rectangle = new Rectangle();
-                for (int i = 0; i < rectangle_array.Length; i++)
-                {
-                    rectangle_array[i] = rectangle_array[i + 1];
-                    rectangle_array[0] = rectangle;
-                }
+                Stack rectangle = new Stack();                
                 return true;
             }
             else return false;
@@ -97,8 +92,11 @@ namespace Class
             double MaxArea = rectangle_array[0].Area();
             for (int i = 1; i < rectangle_array.Length; i++)
             {
-                if (rectangle_array[i].Area() > MaxArea) MaxArea = rectangle_array[i].Area();
-                numberOfMaxArea = i;
+                if (rectangle_array[i].Area() > MaxArea)
+                {
+                    MaxArea = rectangle_array[i].Area();
+                    numberOfMaxArea = i;
+                }
             }
             return numberOfMaxArea;
         }
@@ -109,8 +107,11 @@ namespace Class
             double MinPerimeter = rectangle_array[0].Perimeter();
             for (int i = 1; i < rectangle_array.Length; i++)
             {
-                if (rectangle_array[i].Perimeter() > MinPerimeter) MinPerimeter = rectangle_array[i].Perimeter();
-                numberOfMinPerimeter = i;
+                if (rectangle_array[i].Perimeter() < MinPerimeter)
+                {
+                    MinPerimeter = rectangle_array[i].Perimeter();
+                    numberOfMinPerimeter = i;
+                }
             }
             return numberOfMinPerimeter;
         }
