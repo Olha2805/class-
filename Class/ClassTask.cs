@@ -6,18 +6,18 @@ namespace Class
 {
     public class Rectangle 
     {
-        private double sideA;
-        private double sideB;
+         private double sideA;
+         private double sideB;
 
-        public Rectangle (double sideA, double sideB)
+        public Rectangle(double a, double b)
         {
-            double a = sideA;
-            double b = sideB;
+            sideA = a;
+            sideB = b;
         }
 
-        public Rectangle (double sideA)
+        public Rectangle (double a)
         {
-            double a = sideA;
+            sideA = a;
             this.sideB = 5;
         }
 
@@ -125,5 +125,4 @@ namespace Class
             return countOfSquare;
         }
     }
-
 }
