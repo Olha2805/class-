@@ -314,7 +314,7 @@ namespace Class.Tests
                 Assert.Fail("Method 'GetSideB' in rectangle that has constructor with 0 arguments works incorrectly.");
             }
         }
-        /*
+        
     
         [TestCase(5, 5, 25)]
         [TestCase(2, 2, 4)]
@@ -671,5 +671,5 @@ namespace Class.Tests
         
         
     }
-    */
+    
 }
